@@ -1,18 +1,20 @@
-import { Text, View } from "react-native";
-import { Box } from "@/components/ui/box";
+import { Button, ButtonText } from "@/components/ui/button";
+import { Center } from "@/components/ui/center";
+import { router } from "expo-router";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Box className="bg-primary-500 p-5">
-        <Text className="text-typography-0">This is the Box</Text>
-      </Box>
-    </View>
+    <Center className="h-[200px] w-full">
+      <Button
+        size="md"
+        variant="solid"
+        action="primary"
+        onPress={() => {
+          router.push("/(tabs)/home");
+        }}
+      >
+        <ButtonText>Hello World!</ButtonText>
+      </Button>
+    </Center>
   );
 }
